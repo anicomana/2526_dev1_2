@@ -41,8 +41,7 @@ public class PlayerController : MonoBehaviour
         // Launch projectile
 
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-            Debug.Log("Shot the BANANA!!");
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);;
         }
         
     }
