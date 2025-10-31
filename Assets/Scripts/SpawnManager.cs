@@ -8,16 +8,9 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 1.5f;
     private float spawnInterval = 1.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         InvokeRepeating(nameof(SpawnRandomAnimal), startDelay, spawnInterval);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SpawnRandomAnimal()

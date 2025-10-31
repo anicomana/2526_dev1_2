@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int hitRequired = 1;
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        hitRequired--;
         Destroy(other.gameObject);
-        Debug.Log("Animal fed!");
+
+        if (hitRequired == 0)
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            FindAnyObjectByType<ScoreManager>().AddScore();
+        }
     }
 }
